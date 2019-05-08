@@ -69,3 +69,25 @@ group_adjacent = lambda a,k: list(zip(*(islice(a, i, None, k ) for i in range(k)
 # [(1, 2), (3, 4), (5, 6)]
 # >>> group_adjacent(a,1)
 # [(1,), (2,), (3,), (4,), (5,), (6,), (9,)]
+# Sinh uniqe id cho từng giá trị
+import collections
+import itertools
+value_to_numeric_map = collections.defaultdict(itertools.count().__next__)
+
+# Những phần tử lớn nhất và nhỏ nhất trong 1 list
+import heapq
+import random
+a = [random.randint(0, 100) for __ in range(100)]
+heapq.nsmallest(5,a)
+heapq.nlargest(5,a)
+
+# Ứng dụng của itertools
+# Tích Descartes
+import itertools
+for p in itertools.product('223', '54'):
+    print(''.join(p))
+
+for p in itertools.product('12', repeat = 4):
+    print(''.join(p))
+
+# T
