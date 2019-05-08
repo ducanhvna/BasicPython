@@ -42,4 +42,30 @@ m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 {v: k for k, v in m.items()}
 
 # Output: {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
-# Tập hợp và các phép toán liên quan
+# Tập hợp và các phép toán liên 
+
+# Nhóm các phần tử liền nhau
+group_adjacent = lambda a, k: list(zip(*([iter(a)]*k)))
+# >>> group_adjacent(a, 3)
+# [(1, 2, 3), (4, 5, 6)]
+# >>> group_adjacent(a, 2)
+# [(1, 2), (3, 4), (5, 6)]
+# >>> group_adjacent(a, 1)
+# [(1,), (2,), (3,), (4,), (5,), (6,)]
+# >>> a = [1,2, 3, 4, 5, 6, 9]
+# >>> group_adjacent(a, 1)
+# [(1,), (2,), (3,), (4,), (5,), (6,), (9,)]
+# >>> group_adjacent(a, 2)
+# [(1, 2), (3, 4), (5, 6)]
+# >>> group_adjacent(a, 3)
+# [(1, 2, 3), (4, 5, 6)]
+# >>>
+from itertools import islice
+group_adjacent = lambda a,k: list(zip(*(islice(a, i, None, k ) for i in range(k))))
+# >>> group_adjacent = lambda a,k: list(zip(*(islice(a, i, None, k ) for i in range(k))))
+# >>> group_adjacent(a, 3)
+# [(1, 2, 3), (4, 5, 6)]
+# >>> group_adjacent(a,2)
+# [(1, 2), (3, 4), (5, 6)]
+# >>> group_adjacent(a,1)
+# [(1,), (2,), (3,), (4,), (5,), (6,), (9,)]
