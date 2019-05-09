@@ -98,3 +98,5 @@ for p in itertools.chain(itertools.combinations(a, 2), itertools.combinations(a,
 
 for subset in itertools.chain.from_iterable(itertools.combinations(a,n) for n in range(len(a) + 1)):
     print(subset)
+
+# Nhóm các phần tử theo một tiêu chí
