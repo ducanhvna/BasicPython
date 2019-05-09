@@ -56,3 +56,29 @@ print (my_double(3) + my_triple (3))
 # 4
 # 6
 # 15
+x = [1, 2, 3, 4, 5]
+def square(num):
+    return num*num
+
+print(list(map(square, x)))
+
+from functools import reduce
+
+product = reduce((lambda x, y: x * y),[1, 2, 3, 4, 5])
+print(product)
+
+x = range(-5, 5)
+
+all_less_than_zero = list(filter(lambda num: num < 0, x))
+print(all_less_than_zero)
+
+all_less_than_zero = list(map(lambda num: num < 0, x))
+print(all_less_than_zero)
+
+x = range(-5, 5)
+
+all_less_than_zero = list(map(lambda num: num * num, list(filter(lambda num: num < 0, x))))
+print(all_less_than_zero)
+
+thislist = list(("apple", "banana", "cherry")) # note the double round-brackets
+print(thislist)
